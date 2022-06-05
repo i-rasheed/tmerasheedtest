@@ -1,0 +1,16 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.App{
+    display: flex;
+    padding: 0px 88px 40px 54px;
+    /* height: 100vh; */
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+}

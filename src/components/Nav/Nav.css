@@ -1,0 +1,60 @@
+.nav{
+    width: 300px;
+    height: 100vh;
+    border-right: 1px solid #D9DBE9;
+    padding-top: 30px;
+    padding-right: 69px;
+}
+.nav-item{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 32px;
+letter-spacing: 1px;
+color: rgba(0, 0, 0, 0.43);
+}
+
+.hom{
+    margin-left: 21px;
+}
+
+.fav{
+    margin-left: 25px;
+}
+
+.nav-item:visited{
+    color: #14142B;
+}
+
+.navitemwrapper{
+margin-top: 41px;
+display: flex;
+align-items: center;
+}
+
+.active{
+    background: #1D9BF0;
+    /* border-radius: 1px; */
+    /* width: 30px;
+    height: 30px; */
+    /* padding: 9px; */
+    /* display: flex;
+    justify-content: center; */
+}
+
+a:hover{
+    background: #1D9BF0;
+}
+
+.searchhandle{
+   width: 10px;
+   height: 5px;
+   position: relative;
+   top: 0.6rem;
+   left: -3px;
+}
+
+
+
+
