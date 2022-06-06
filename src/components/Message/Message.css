@@ -1,0 +1,17 @@
+.message-wrapper{
+background: black;
+color: white;
+display: flex;
+justify-content: space-between;
+padding: 2px 5px;
+align-items: center;
+margin-left: 3rem;
+width: 35%;
+margin-top: 5px;
+}
+
+.cancel-btn{
+    background: black;
+    cursor: pointer;
+    color: red;
+}

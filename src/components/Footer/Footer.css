@@ -14,6 +14,13 @@
 border-radius: 6px;
 }
 
+select{
+width: 167px;
+height: 42px;
+border: 1px solid #8692A6;
+border-radius: 6px;
+}
+
 option{
     font-family: 'Inter';
 font-style: normal;
@@ -27,3 +34,9 @@ align-items: center;
 
 color: #8692A6;
 }
+
+@media screen and (max-width: 768px) {
+    .copyright{
+        margin-right: 1rem;
+    }
+  }

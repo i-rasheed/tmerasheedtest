@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../HomePage/HomePage.css";
 import { useSelector, useDispatch } from "react-redux";
 import { listDevelopers } from "../../actions/developerActions";
+import Message from "../../components/Message/Message";
 
 export default function HomePage() {
   const [favoriteList, setFavoriteList] = useState([]);
@@ -17,6 +18,10 @@ export default function HomePage() {
     dispatch(listDevelopers());
   }, [dispatch]);
 
+  const cancelHandler = () => {
+    setMessage(undefined);
+  };
+
   const addToFavorite = (item) => {
     console.log(item);
     const newItem = {
@@ -29,11 +34,11 @@ export default function HomePage() {
 
     const existItem = favoriteList.find((el) => el.id === newItem.id);
     if (existItem) {
-      return;
+      return setMessage("Already added");
     } else {
       const newList = [...favoriteList, newItem];
       setFavoriteList(newList);
-      setMessage("added to favorite list");
+      setMessage("Added to favorite list");
       localStorage.setItem("favList", JSON.stringify(newList));
     }
     console.log(favoriteList);
@@ -42,7 +47,7 @@ export default function HomePage() {
   return (
     <div className='home'>
       <h1 className='home-heading'>Hire Top Developers</h1>
-      {message && <p style={{ textAlign: "center" }}>{message}</p>}
+      {message && <Message message={message} cancel={cancelHandler} />}
       <div className='data-wrapper'>
         {loading ? (
           <p>loading...</p>
