@@ -6,8 +6,9 @@ export default function Nav() {
   return (
     <div className='nav'>
       <img src={require("../../assets/logo.png")} alt='logo' />
-      <NavLink to='/' activeclassname='active'>
-        <div className='navitemwrapper'>
+
+      <div className='navitemwrapper'>
+        <NavLink to='/'>
           <img
             className='navicon'
             src={require("../../assets/search.png")}
@@ -17,20 +18,21 @@ export default function Nav() {
             className='searchhandle'
             src={require("../../assets/searchhandle.png")}
             alt='search'
-          />{" "}
-          <h1 className='nav-item hom'>Home</h1>
-        </div>
-      </NavLink>
-      <NavLink to='/favourite' activeclassname='active'>
-        <div className='navitemwrapper'>
+          />
+        </NavLink>
+        <h1 className='nav-item hom'>Home</h1>
+      </div>
+
+      <div className='navitemwrapper'>
+        <NavLink to='/favourite'>
           <img
             src={require("../../assets/navheart.png")}
             className='navicon'
             alt='heart'
-          />{" "}
-          <h1 className='nav-item fav'>favourites</h1>
-        </div>
-      </NavLink>
+          />
+        </NavLink>
+        <h1 className='nav-item fav'>favourites</h1>
+      </div>
     </div>
   );
 }

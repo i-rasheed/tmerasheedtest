@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../HomePage/HomePage.css";
 import { useSelector, useDispatch } from "react-redux";
 import { listDevelopers } from "../../actions/developerActions";
 
 export default function HomePage() {
+  const [favoriteList, setFavoriteList] = useState([]);
+  const [message, setMessage] = useState();
   const dispatch = useDispatch();
 
   const developerList = useSelector((state) => state.developerList);
@@ -15,9 +17,32 @@ export default function HomePage() {
     dispatch(listDevelopers());
   }, [dispatch]);
 
+  const addToFavorite = (item) => {
+    console.log(item);
+    const newItem = {
+      id: item._id,
+      serviceImg: item._source.service_photo,
+      avatar: item._source.avatar,
+      displayName: item._source.display_name,
+      price: item._source.starting_from,
+    };
+
+    const existItem = favoriteList.find((el) => el.id === newItem.id);
+    if (existItem) {
+      return;
+    } else {
+      const newList = [...favoriteList, newItem];
+      setFavoriteList(newList);
+      setMessage("added to favorite list");
+      localStorage.setItem("favList", JSON.stringify(newList));
+    }
+    console.log(favoriteList);
+  };
+
   return (
     <div className='home'>
       <h1 className='home-heading'>Hire Top Developers</h1>
+      {message && <p style={{ textAlign: "center" }}>{message}</p>}
       <div className='data-wrapper'>
         {loading ? (
           <p>loading...</p>
@@ -37,9 +62,12 @@ export default function HomePage() {
                   borderRadius: "10px",
                 }}
               />
-              <div className='heart-wrapper'>
+              <button
+                onClick={() => addToFavorite(ed)}
+                className='heart-wrapper'
+              >
                 <img src={require("../../assets/whiteheart.png")} alt='heart' />
-              </div>
+              </button>
               <img
                 src={ed._source.avatar}
                 alt='avatar'

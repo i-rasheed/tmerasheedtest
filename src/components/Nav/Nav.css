@@ -35,17 +35,17 @@ align-items: center;
 
 .active{
     background: #1D9BF0;
-    /* border-radius: 1px; */
-    /* width: 30px;
-    height: 30px; */
-    /* padding: 9px; */
-    /* display: flex;
-    justify-content: center; */
+    border-radius: 1px;
+     width: 30px; 
+    height: 30px; 
+    padding: 9px;
+    display: flex;
+    justify-content: center;
 }
 
-a:hover{
+/* a:hover{
     background: #1D9BF0;
-}
+} */
 
 .searchhandle{
    width: 10px;
