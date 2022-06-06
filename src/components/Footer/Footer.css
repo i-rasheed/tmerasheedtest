@@ -19,6 +19,7 @@ width: 167px;
 height: 42px;
 border: 1px solid #8692A6;
 border-radius: 6px;
+color: #8692A6;
 }
 
 option{
@@ -27,12 +28,13 @@ font-style: normal;
 font-weight: 500;
 font-size: 14px;
 line-height: 17px;
+
 /* identical to box height */
 
 display: flex;
 align-items: center;
 
-color: #8692A6;
+
 }
 
 @media screen and (max-width: 768px) {
